@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Miswaak — Natural Miswak & Oral Care</title>
+<meta name="description" content="Premium natural miswaak (miswak) sticks — sustainably harvested, hand-selected, and ready to help your oral care routine. Shop, learn how to use, and read the benefits." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Miswaak — Natural Miswak & Oral Care">
+<meta property="og:description" content="Premium natural miswaak (miswak) sticks — sustainably harvested, hand-selected, and ready to help your oral care routine.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Miswaak">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<!-- Schema.org structured data (Product list example) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Store",
+  "name":"Miswaak",
+  "url":".",
+  "description":"Natural miswaak (miswak) sticks — sustainably harvested.",
+  "image":"https://via.placeholder.com/1200x630.png?text=Miswaak"
+}
+</script>
+
+<style>
+:root{
+  --bg:#fbfbfd; --card:#ffffff; --muted:#6b7280; --accent:#0f766e;
+  --glass: rgba(255,255,255,0.6);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#0f172a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f8fafc 0%,var(--bg) 100%);line-height:1.45}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#10b981,#06b6d4);display:gridplace-items:center;display:grid;place-items:center;color:white;font-weight:700;font-size:18px}
+.nav{display:flex;gap:14px;align-items:center}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(15,118,110,0.12)}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+.hero-card{background:var(--card);padding:26px;border-radius:14px;box-shadow:0 6px 24px rgba(15,23,42,0.06)}
+.hero h1{margin:0;font-size:28px}
+.lead{color:var(--muted);margin-top:8px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.feature{background:linear-gradient(180deg, rgba(6,182,212,0.06), rgba(16,185,129,0.03));padding:12px;border-radius:10px;font-size:14px}
+.product-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04);display:flex;flex-direction:column}
+.card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+.price{font-weight:700;color:var(--accent);margin-top:8px}
+.row{display:flex;gap:8px;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+.howto, .faq, .contact{margin-top:28px}
+.footer{margin-top:36px;padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* cart modal */
+.cart-btn{position:relative}
+.cart-count{position:absolute;top:-8px;right:-8px;background:#ef4444;color:white;padding:3px 7px;border-radius:999px;font-size:12px}
+.modal{position:fixed;right:20px;bottom:20px;width:360px;background:var(--card);border-radius:12px;padding:14px;box-shadow:0 18px 40px rgba(2,6,23,0.12);max-height:70vh;overflow:auto;z-index:40}
+.cart-item{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.qty{display:inline-flex;align-items:center;gap:8px}
+.qty button{padding:6px 8px;border-radius:8px;border:1px solid rgba(15,118,110,0.12);background:transparent;cursor:pointer}
+.total{font-weight:700;color:var(--accent);margin-top:8px}
+.badge{font-size:12px;padding:6px 8px;background:#ecfeff;border-radius:999px;color:#064e3b}
+
+@media (max-width:920px){.hero{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.feature-grid{grid-template-columns:1fr}.logo{width:38px;height:38px;font-size:16px}}
+</style>
+</head>
+<body>
+<div class="container" role="main">
+  <header class="header" aria-label="Top navigation">
+    <a class="brand" href="#">
+      <div class="logo" aria-hidden="true">M</div>
+      <div>
+        <div style="font-weight:700">Miswaak</div>
+        <div class="small" style="margin-top:2px">Natural oral care</div>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="small" href="#about">About</a>
+      <a class="small" href="#howto">How to use</a>
+      <a class="small" href="#shop">Shop</a>
+      <button class="btn cart-btn" id="openCart" aria-haspopup="dialog" aria-controls="cartModal">
+        Cart <span id="cartCount" class="cart-count" style="display:none">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-card">
+      <h1 id="hero-title">Miswaak — natural miswak for daily oral care</h1>
+      <p class="lead">Hand-harvested miswak sticks, prepared and packaged sustainably. Naturally antibacterial, fluoride-free, and travel-ready.</p>
+
+      <div class="feature-grid" aria-hidden="false">
+        <div class="feature"><strong>Natural antiseptic</strong><div class="small">Contains salvadorine & fluoride-like minerals</div></div>
+        <div class="feature"><strong>Sustainably harvested</strong><div class="small">Ethical sourcing & minimal processing</div></div>
+        <div class="feature"><strong>Travel & pocket friendly</strong><div class="small">No paste needed — use anytime</div></div>
+      </div>
+
+      <div style="margin-top:16px">
+        <a class="btn" href="#shop">Shop miswaak</a>
+        <a class="btn secondary" href="#howto" style="margin-left:10px">How to use</a>
+      </div>
+
+      <section id="about" class="howto" aria-labelledby="about-title">
+        <h3 id="about-title" style="margin-top:18px">About miswaak</h3>
+        <p class="small">Miswaak (miswak, siwak) is a traditional oral-cleaning stick made from the Salvadora persica tree. Used for centuries, it's known for mechanical cleansing and natural compounds that support oral health.</p>
+      </section>
+    </div>
+
+    <aside style="display:flex;flex-direction:column;gap:14px">
+      <div class="hero-card" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1556228720-8f4b6f3c5a6a?q=80&w=1200&auto=format&fit=crop" alt="Miswak sticks" style="width:100%;height:200px;object-fit:cover;border-radius:8px">
+        <div style="margin-top:12px">
+          <div style="font-weight:700">Starter Pack — 5 sticks</div>
+          <div class="small">Perfect for trying miswaak for the first time.</div>
+          <div class="price">$9.99</div>
+          <div style="margin-top:8px">
+            <button class="btn" onclick="addToCart('miswaak-starter')">Add to cart</button>
+            <a class="btn secondary" href="#shop" style="margin-left:8px">View more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card small" aria-hidden="true">
+        <strong>Why choose miswaak?</strong>
+        <ul style="padding-left:18px;margin:8px 0">
+          <li>No plastic or tube paste</li>
+          <li>Biodegradable & renewable</li>
+          <li>Gentle on enamel when used correctly</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section id="howto" class="howto" aria-labelledby="howto-title">
+    <h2 id="howto-title">How to use miswaak</h2>
+    <ol class="small">
+      <li>Trim ~1 cm of bark from one end and chew gently to fray the fibers into a brush.</li>
+      <li>Brush gently across teeth and gums; use like a toothbrush for 2–3 minutes.</li>
+      <li>Rinse and store dry; re-prepare a fresh end when fibers compress.</li>
+    </ol>
+    <div style="margin-top:8px" class="small">Tip: replace or sanitize after illness. Not a replacement for professional dental advice — consult your dentist for major issues.</div>
+  </section>
+
+  <section id="shop" aria-labelledby="shop-title" style="margin-top:18px">
+    <h2 id="shop-title">Shop</h2>
+    <div class="product-list" id="productList" aria-live="polite">
+      <!-- products injected by JS -->
+    </div>
+  </section>
+
+  <section class="howto" aria-labelledby="test-title">
+    <h2 id="test-title">What people say</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px">
+      <div class="card"><div style="font-weight:700">Amina — Verified</div><div class="small" style="margin-top:8px">"Gentle, fresh, and I love that it's sustainable."</div></div>
+      <div class="card"><div style="font-weight:700">J. — Verified</div><div class="small" style="margin-top:8px">"Travel-friendly and lasts long. Great for hiking."</div></div>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">FAQ</h2>
+    <div class="small" style="margin-top:8px">
+      <strong>Is miswaak safe?</strong>
+      <p>Yes when sourced from Salvadora persica and used correctly. Avoid very aggressive scrubbing.</p>
+      <strong>Does it replace toothpaste?</strong>
+      <p>Miswaak can be used alone; many users combine it with regular dental check-ups and fluoride if recommended by their dentist.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <form id="contactForm" class="small" onsubmit="event.preventDefault(); alert('Thanks — form demo only.')">
+      <label> Name <br><input required style="padding:8px;width:100%;margin-top:6px;border-radius:8px;border:1px solid #e6eef0"></label><br><br>
+      <label> Email <br><input type="email" required style="padding:8px;width:100%;margin-top:6px;border-radius:8px;border:1px solid #e6eef0"></label><br><br>
+      <label> Message <br><textarea required style="padding:8px;width:100%;margin-top:6px;border-radius:8px;border:1px solid #e6eef0"></textarea></label><br><br>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div>&copy; <span id="year"></span> Miswaak — sustainable oral care • Made with care</div>
+  </footer>
+</div>
+
+<!-- Cart modal template -->
+<div id="cartModal" role="dialog" aria-modal="true" style="display:none" class="modal" aria-label="Shopping cart">
+  <h3 style="margin-top:0">Your cart</h3>
+  <div id="cartItems"></div>
+  <div id="cartEmpty" class="small">Your cart is empty.</div>
+  <div class="total small" id="cartTotal" style="display:none">Total: $0.00</div>
+  <div style="margin-top:12px;display:flex;gap:8px">
+    <button class="btn" id="checkoutBtn" onclick="checkout()">Checkout (demo)</button>
+    <button class="btn secondary" onclick="toggleCart()">Continue shopping</button>
+  </div>
+</div>
+
+<script>
+// ---------- sample products ----------
+const PRODUCTS = [
+  {
+    id: 'miswaak-starter',
+    title: 'Starter Pack — 5 sticks',
+    price: 9.99,
+    img: 'https://images.unsplash.com/photo-1610465299689-e7f2e9a6b7a6?q=80&w=800&auto=format&fit=crop',
+    desc: 'Five selection-grade miswaak sticks, ready to use.'
+  },
+  {
+    id: 'miswaak-premium',
+    title: 'Premium Pack — 15 sticks',
+    price: 24.99,
+    img: 'https://images.unsplash.com/photo-1588167100972-2c0b7f21ab6d?q=80&w=800&auto=format&fit=crop',
+    desc: '15 sustainably harvested sticks, hand-selected for quality.'
+  },
+  {
+    id: 'miswaak-travel',
+    title: 'Travel Tube — 3 sticks',
+    price: 7.49,
+    img: 'https://images.unsplash.com/photo-1603816242200-aeeac62b2fef?q=80&w=800&auto=format&fit=crop',
+    desc: 'Compact tube to carry miswaak on the go.'
+  }
+];
+
+// ---------- render products ----------
+const productList = document.getElementById('productList');
+function renderProducts(){
+  productList.innerHTML = '';
+  for(const p of PRODUCTS){
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `
+      <img src="${p.img}" alt="${p.title}">
+      <div style="flex:1">
+        <div style="font-weight:700;margin-top:8px">${p.title}</div>
+        <div class="small" style="margin-top:6px">${p.desc}</div>
+        <div class="price">$${p.price.toFixed(2)}</div>
+      </div>
+      <div style="margin-top:10px">
+        <button class="btn" onclick="addToCart('${p.id}')">Add to cart</button>
+      </div>
+    `;
+    productList.appendChild(el);
+  }
+}
+renderProducts();
+
+// ---------- cart logic ----------
+let CART = JSON.parse(localStorage.getItem('miswaak_cart') || '{}');
+
+function saveCart(){
+  localStorage.setItem('miswaak_cart', JSON.stringify(CART));
+  updateCartUI();
+}
+function addToCart(id, qty=1){
+  if(!CART[id]) CART[id]=0;
+  CART[id] += qty;
+  saveCart();
+  openCart();
+}
+function removeFromCart(id){
+  delete CART[id];
+  saveCart();
+}
+function updateQty(id, delta){
+  CART[id] = (CART[id] || 0) + delta;
+  if(CART[id] <= 0) removeFromCart(id);
+  saveCart();
+}
+function getProduct(id){ return PRODUCTS.find(p=>p.id===id); }
+
+function cartItemCount(){
+  return Object.values(CART).reduce((s,v)=>s+v,0);
+}
+
+function updateCartUI(){
+  const count = cartItemCount();
+  const cartCount = document.getElementById('cartCount');
+  if(count>0){
+    cartCount.style.display='inline-block';
+    cartCount.textContent = count;
+  } else cartCount.style.display='none';
+
+  const cartItemsDiv = document.getElementById('cartItems');
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+  if(Object.keys(CART).length===0){
+    document.getElementById('cartEmpty').style.display='block';
+    document.getElementById('cartTotal').style.display='none';
+    document.getElementById('checkoutBtn').disabled = true;
+  } else {
+    document.getElementById('cartEmpty').style.display='none';
+    document.getElementById('cartTotal').style.display='block';
+    document.getElementById('checkoutBtn').disabled = false;
+    for(const id of Object.keys(CART)){
+      const qty = CART[id];
+      const p = getProduct(id);
+      if(!p) continue;
+      total += p.price * qty;
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'cart-item';
+      itemDiv.innerHTML = `
+        <img src="${p.img}" alt="${p.title}" style="width:52px;height:52px;object-fit:cover;border-radius:6px">
+        <div style="flex:1">
+          <div style="font-weight:700">${p.title}</div>
+          <div class="small">$${p.price.toFixed(2)} &times; ${qty}</div>
+          <div class="qty" style="margin-top:6px">
+            <button aria-label="decrease" onclick="updateQty('${id}', -1)">−</button>
+            <div class="small badge">${qty}</div>
+            <button aria-label="increase" onclick="updateQty('${id}', 1)">＋</button>
+            <button class="small" style="margin-left:8px;background:transparent;border:0;color:#ef4444;cursor:pointer" onclick="removeFromCart('${id}')">Remove</button>
+          </div>
+        </div>
+      `;
+      cartItemsDiv.appendChild(itemDiv);
+    }
+    document.getElementById('cartTotal').textContent = 'Total: $' + total.toFixed(2);
+  }
+  localStorage.setItem('miswaak_cart_count', count);
+}
+
+function toggleCart(){
+  const modal = document.getElementById('cartModal');
+  const showing = modal.style.display !== 'none';
+  modal.style.display = showing ? 'none' : 'block';
+}
+function openCart(){
+  document.getElementById('cartModal').style.display = 'block';
+  updateCartUI();
+}
+document.getElementById('openCart').addEventListener('click', ()=>{
+  toggleCart();
+  updateCartUI();
+});
+
+// Checkout demo
+function checkout(){
+  const items = Object.keys(CART).map(id=>{
+    const p = getProduct(id); return `${p.title} x${CART[id]}`;
+  });
+  if(items.length===0){ alert('Your cart is empty.'); return; }
+  alert('Demo checkout — items:\\n' + items.join('\\n') + '\\n\\n(This demo does not process payments.)');
+  // clear demo cart
+  CART = {};
+  saveCart();
+  toggleCart();
+}
+
+// init UI
+document.getElementById('year').textContent = new Date().getFullYear();
+updateCartUI();
+</script>
+</body>
+</html>
